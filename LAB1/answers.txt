@@ -1,0 +1,24 @@
+1. If the user selects Cancel:
+- showConfirmDialog returns JOptionPane.CANCEL_OPTION.
+- If the dialog is closed using the X button, it returns JOptionPane.CLOSED_OPTION.
+- In the current ternary expression, any option other than YES is treated as NO, so Cancel or closing the window will be interpreted as NO.
+
+2. Display only Yes and No options:
+- Use showConfirmDialog with optionType = JOptionPane.YES_NO_OPTION.
+- Handle YES_OPTION and NO_OPTION explicitly.
+
+3. Use custom button text, for example "I do" or "I don’t":
+- Use showOptionDialog, as showConfirmDialog only supports standard labels.
+- Provide a custom Object[] options, such as "I do" and "I don’t".
+- The return value will be the selected index (0, 1, ...) or CLOSED_OPTION if the dialog is closed.
+
+- Example logic:
+    int choice = JOptionPane.showOptionDialog(...);
+    if(choice == 0) {
+        // User selected "I do"
+    } else if (choice == 1) {
+        // User selected "I don’t"
+    } else {
+        // User closed the dialog
+    }
+    
