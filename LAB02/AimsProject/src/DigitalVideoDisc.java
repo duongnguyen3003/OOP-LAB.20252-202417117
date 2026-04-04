@@ -47,12 +47,12 @@ public class DigitalVideoDisc {
         this.id = nbDigitalVideoDiscs;
     }
 
-    public int getId() { return id;}
-    public String getTitle() { return title;}
-    public String getCategory() { return category;}
-    public String getDirector() { return director;}
-    public int getLength() { return length;}
-    public float getCost() { return cost;}
+    public int getId() { return id; }
+    public String getTitle() { return title; }
+    public String getCategory() { return category; }
+    public String getDirector() { return director; }
+    public int getLength() { return length; }
+    public float getCost() { return cost; }
 
     public void setTitle(String title) {
         this.title = title;
