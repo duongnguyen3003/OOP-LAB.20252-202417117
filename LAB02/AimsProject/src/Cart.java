@@ -3,8 +3,8 @@ public class Cart {
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
     private int qtyOrdered = 0;
 
-    // Original add method
-    public void addDigitalVideoDisc(DigitalVideoDisc disc)
+    // Original add method (from previous section)
+    public void addDigitalVideoDisc(DigitalVideoDisc disc) 
     {
         if (qtyOrdered < MAX_NUMBERS_ORDERED) {
             itemsOrdered[qtyOrdered] = disc;
@@ -19,7 +19,7 @@ public class Cart {
     }
 
     // Overloaded add method 1: Passing an array of DVDs
-    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList)
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) 
     {
         for (int i = 0; i < dvdList.length; i++) {
             if (qtyOrdered < MAX_NUMBERS_ORDERED) {
@@ -33,21 +33,18 @@ public class Cart {
         }
     }
 
-    // Overloaded add method 2: Passing a variable number of parameters (Varargs)
+    // Overloaded add method 2: Passing a variable number of parameters
     public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
         addDigitalVideoDisc(dvd1);
         addDigitalVideoDisc(dvd2);
     }
 
-    // Remove method
-    public void removeDigitalVideoDisc(DigitalVideoDisc disc) 
-    {
-        for (int i = 0; i < qtyOrdered; i++)
-        {
+    // Remove method (from previous section)
+    public void removeDigitalVideoDisc(DigitalVideoDisc disc) { 
+        for (int i = 0; i < qtyOrdered; i++) {
             if (itemsOrdered[i] == disc) {
                 // Shift remaining elements to the left
-                for (int j = i; j < qtyOrdered - 1; j++) 
-                {
+                for (int j = i; j < qtyOrdered - 1; j++) {
                     itemsOrdered[j] = itemsOrdered[j + 1];
                 }
                 itemsOrdered[qtyOrdered - 1] = null; // Clear last element
@@ -59,19 +56,17 @@ public class Cart {
         System.out.println("Disc not found in the cart.");
     }
 
-    // Calculate total cost
-    public float totalCost() 
-    {
+    // Calculate total cost (from previous section)
+    public float totalCost() { //
         float total = 0;
         for (int i = 0; i < qtyOrdered; i++) {
-            total += itemsOrdered[i].getCost();
+            total += itemsOrdered[i].getCost(); //
         }
         return total;
     }
 
-    // Display cart items method (Requested in Section 12)
-    public void displayCart() 
-    {
+    // Display cart items method (from previous section)
+    public void displayCart() { //
         System.out.println("=======================CART=======================");
         for (int i = 0; i < qtyOrdered; i++) {
             System.out.println((i + 1) + ". " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCost());
