@@ -69,7 +69,7 @@ public class Cart {
         return total;
     }
 
-    // Display cart items method (Requested in Section 12)
+    // Display cart items method
     public void displayCart() 
     {
         System.out.println("=======================CART=======================");
