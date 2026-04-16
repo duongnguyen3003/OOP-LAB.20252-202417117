@@ -1,3 +1,6 @@
+import hust.soict.globalict.aims.cart.Cart;
+import hust.soict.globalict.aims.disc.DigitalVideoDisc;
+
 public class Aims {
     public static void main(String[] args) {
         Cart anOrder = new Cart();

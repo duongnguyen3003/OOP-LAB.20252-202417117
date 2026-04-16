@@ -1,3 +1,4 @@
+package hust.soict.globalict.aims.disc;
 public class DigitalVideoDisc {
     // Class member to keep track of the total number of DVDs created
     private static int nbDigitalVideoDiscs = 0;
