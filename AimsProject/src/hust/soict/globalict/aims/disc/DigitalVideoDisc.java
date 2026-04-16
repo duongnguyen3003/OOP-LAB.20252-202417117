@@ -58,4 +58,16 @@ public class DigitalVideoDisc {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public boolean isMatch(String title)
+    {
+        if (this.getTitle() == null) return false;
+            return this.getTitle().toLowerCase().contains(title.toLowerCase());
+    }
+
+    @Override
+    public String toString() 
+    {
+        return "DVD - " + getTitle() + " - " + getCategory() + " - " + getDirector() + " - " + getLength() + " mins: " + getCost() + " $";
+    }
 }
