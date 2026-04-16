@@ -87,4 +87,15 @@ public class Cart {
             System.out.println("No match found for title: " + title);
         }
     }
+
+    public void displayCart() 
+    {
+        System.out.println("=======================CART=======================");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println((i + 1) + ". " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCost());
+        }
+        System.out.println("Total Cost: " + totalCost());
+        System.out.println("===================================================");
+    }
+
 }
