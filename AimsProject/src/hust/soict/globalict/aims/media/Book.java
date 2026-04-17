@@ -18,7 +18,7 @@ public class Book {
         return cost;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
