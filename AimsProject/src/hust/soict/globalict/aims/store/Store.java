@@ -1,6 +1,6 @@
 package hust.soict.globalict.aims.store;
 
-import hust.soict.globalict.aims.disc.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
 
 public class Store {
     // Defining a maximum capacity for the store's array
