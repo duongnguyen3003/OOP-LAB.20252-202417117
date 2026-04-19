@@ -1,6 +1,7 @@
 package hust.soict.globalict.aims.media;
 
-public class Track {
+// Add 'implements Playable' here
+public class Track implements Playable {
     private String title;
     private int length;
 
@@ -9,12 +10,22 @@ public class Track {
         this.length = length;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitle() { 
+        return title; 
+    }
+    
+    public int getLength() { 
+        return length; 
     }
 
-    public int getLength() {
-        return length;
+    @Override
+    public void play() {
+        if (this.getLength() > 0) {
+            System.out.println("Playing track: " + this.getTitle());
+            System.out.println("Track length: " + this.getLength());
+        } else {
+            System.out.println("Track '" + this.getTitle() + "' cannot be played because its length is invalid (0 or less).");
+        }
     }
 
     // Override equals method

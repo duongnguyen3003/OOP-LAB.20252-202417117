@@ -11,8 +11,8 @@ public class CompactDisc extends Disc implements Playable {
         this.artist = artist;
     }
 
-    public String getArtist() {
-        return artist;
+    public String getArtist() { 
+        return artist; 
     }
 
     public void addTrack(Track track) {
@@ -42,7 +42,6 @@ public class CompactDisc extends Disc implements Playable {
         return totalLength;
     }
 
-    // play() method
     @Override
     public void play() {
         System.out.println("Playing CD: " + this.getTitle());
@@ -56,5 +55,10 @@ public class CompactDisc extends Disc implements Playable {
         } else {
             System.out.println("The CD '" + this.getTitle() + "' cannot be played because its total length is 0 or less.");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "CD - " + getTitle() + " - " + getCategory() + " - Artist: " + getArtist() + " - " + getLength() + " mins: " + getCost() + " $";
     }
 }
