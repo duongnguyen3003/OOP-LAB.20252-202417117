@@ -1,6 +1,5 @@
 package hust.soict.globalict.aims.media;
 
-// Add 'implements Playable' here
 public class Track implements Playable {
     private String title;
     private int length;
