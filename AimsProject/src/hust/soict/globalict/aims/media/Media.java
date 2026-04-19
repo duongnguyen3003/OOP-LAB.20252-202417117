@@ -10,6 +10,12 @@ public abstract class Media {
     public Media() {
     }
 
+    public Media(String title, String category, float cost) {
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
     public int getId() {
         return id;
     }
@@ -20,10 +26,6 @@ public abstract class Media {
 
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getCategory() {

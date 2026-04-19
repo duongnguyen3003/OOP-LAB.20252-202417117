@@ -9,15 +9,15 @@ public class Disc extends Media {
     }
 
     public Disc(String title) {
-        super();
-        this.setTitle(title);
+        super(title, null, 0.0f); 
+    }
+
+    public Disc(String title, String category, float cost) {
+        super(title, category, cost);
     }
 
     public Disc(String title, String category, float cost, int length, String director) {
-        super();
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
+        super(title, category, cost);
         this.length = length;
         this.director = director;
     }
