@@ -1,6 +1,8 @@
 package hust.soict.globalict.aims.cart;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 import hust.soict.globalict.aims.media.Media;
 
 public class Cart {
@@ -83,5 +85,15 @@ public class Cart {
         }
         System.out.println("Total Cost: " + totalCost() + " $");
         System.out.println("===================================================");
+    }
+
+    public void sortByTitleCost() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+        System.out.println("The cart has been sorted by Title, then Cost.");
+    }
+
+    public void sortByCostTitle() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+        System.out.println("The cart has been sorted by Cost, then Title.");
     }
 }
