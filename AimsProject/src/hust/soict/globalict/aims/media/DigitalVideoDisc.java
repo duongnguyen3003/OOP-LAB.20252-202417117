@@ -1,57 +1,34 @@
 package hust.soict.globalict.aims.media;
 
-public class DigitalVideoDisc extends Media {
+public class DigitalVideoDisc extends Disc {
     private static int nbDigitalVideoDiscs = 0;
-    
-    private String director;
-    private int length;
 
     // By title
     public DigitalVideoDisc(String title) {
-        this.setTitle(title);
+        super(title, null, 0.0f, 0, null);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
 
     // By category, title and cost
     public DigitalVideoDisc(String category, String title, float cost) {
-        this.setCategory(category);
-        this.setTitle(title);
-        this.setCost(cost);
+        super(title, category, cost, 0, null);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
 
     // By director, category, title and cost
     public DigitalVideoDisc(String director, String category, String title, float cost) {
-        this.director = director;
-        this.setCategory(category);
-        this.setTitle(title);
-        this.setCost(cost);
+        super(title, category, cost, 0, director);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
 
     // By all attributes
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        this.setTitle(title);
-        this.setCategory(category);
-        this.director = director;
-        this.length = length;
-        this.setCost(cost);
+        super(title, category, cost, length, director);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
-    }
-
-    public String getDirector() { return director; }
-    public int getLength() { return length; }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
     }
 
     public boolean isMatch(String title) {
