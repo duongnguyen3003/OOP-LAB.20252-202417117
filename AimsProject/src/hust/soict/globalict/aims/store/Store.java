@@ -25,4 +25,9 @@ public class Store {
             System.out.println("The media '" + media.getTitle() + "' was not found in the store.");
         }
     }
+
+    
+    public java.util.ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
 }
