@@ -6,7 +6,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class AddBookToStoreScreen extends AddItemToStoreScreen {
-    private JTextField tfAuthors = new JTextField();
+    private JTextField tfAuthors; // Do not initialize here
 
     public AddBookToStoreScreen(Store store) {
         super(store, "Book");
@@ -14,6 +14,9 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
 
     @Override
     protected JPanel createCenter() {
+        // Initialize the variable HERE instead
+        tfAuthors = new JTextField(); 
+
         JPanel center = new JPanel(new GridLayout(5, 2, 10, 10));
         center.add(new JLabel("Title: ")); center.add(tfTitle);
         center.add(new JLabel("Category: ")); center.add(tfCategory);

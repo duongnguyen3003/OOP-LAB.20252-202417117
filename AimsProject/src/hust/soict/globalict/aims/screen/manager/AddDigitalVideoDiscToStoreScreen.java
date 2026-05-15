@@ -6,8 +6,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
-    private JTextField tfDirector = new JTextField();
-    private JTextField tfLength = new JTextField();
+    private JTextField tfDirector;
+    private JTextField tfLength;
 
     public AddDigitalVideoDiscToStoreScreen(Store store) {
         super(store, "DVD");
@@ -15,6 +15,10 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
 
     @Override
     protected JPanel createCenter() {
+        // Initialize variables here
+        tfDirector = new JTextField();
+        tfLength = new JTextField();
+
         JPanel center = new JPanel(new GridLayout(6, 2, 10, 10));
         center.add(new JLabel("Title: ")); center.add(tfTitle);
         center.add(new JLabel("Category: ")); center.add(tfCategory);

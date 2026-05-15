@@ -6,9 +6,9 @@ import java.awt.*;
 import javax.swing.*;
 
 public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
-    private JTextField tfDirector = new JTextField();
-    private JTextField tfLength = new JTextField();
-    private JTextField tfArtist = new JTextField();
+    private JTextField tfDirector;
+    private JTextField tfLength;
+    private JTextField tfArtist;
 
     public AddCompactDiscToStoreScreen(Store store) {
         super(store, "CD");
@@ -16,6 +16,11 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
 
     @Override
     protected JPanel createCenter() {
+        // Initialize variables here
+        tfDirector = new JTextField();
+        tfLength = new JTextField();
+        tfArtist = new JTextField();
+
         JPanel center = new JPanel(new GridLayout(7, 2, 10, 10));
         center.add(new JLabel("Title: ")); center.add(tfTitle);
         center.add(new JLabel("Category: ")); center.add(tfCategory);
