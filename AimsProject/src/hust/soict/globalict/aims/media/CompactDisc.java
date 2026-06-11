@@ -43,17 +43,21 @@ public class CompactDisc extends Disc implements Playable {
     }
 
     @Override
-    public void play() {
-        System.out.println("Playing CD: " + this.getTitle());
-        System.out.println("CD Artist: " + this.getArtist());
-        System.out.println("Total CD length: " + this.getLength());
-
+    public void play() throws hust.soict.globalict.aims.exception.PlayerException {
         if (this.getLength() > 0) {
+            System.out.println("Playing CD: " + this.getTitle());
+            System.out.println("CD Artist: " + this.getArtist());
+            System.out.println("Total CD length: " + this.getLength());
+
             for (Track track : tracks) {
-                track.play();
+                try {
+                    track.play();
+                } catch (hust.soict.globalict.aims.exception.PlayerException e) {
+                    throw e;
+                }
             }
         } else {
-            System.out.println("The CD '" + this.getTitle() + "' cannot be played because its total length is 0 or less.");
+            throw new hust.soict.globalict.aims.exception.PlayerException("ERROR: CD length is non-positive!");
         }
     }
 

@@ -1,21 +1,32 @@
 package hust.soict.globalict.aims.cart;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import hust.soict.globalict.aims.media.Media;
 
 public class Cart {
-    // Replaced array with ArrayList
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    // Changed to ObservableList for JavaFX
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
+
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
+    public static final int MAX_NUMBERS_ORDERED = 20;
 
     // Add a Media to the cart
-    public void addMedia(Media media) {
-        if (!itemsOrdered.contains(media)) {
-            itemsOrdered.add(media);
-            System.out.println(media.getTitle() + " has been added to the cart.");
+    public void addMedia(Media media) throws hust.soict.globalict.aims.exception.LimitExceededException {
+        if (itemsOrdered.size() < MAX_NUMBERS_ORDERED) {
+            if (!itemsOrdered.contains(media)) {
+                itemsOrdered.add(media);
+                System.out.println(media.getTitle() + " has been added to the cart.");
+            } else {
+                System.out.println(media.getTitle() + " is already in the cart.");
+            }
         } else {
-            System.out.println(media.getTitle() + " is already in the cart.");
+            throw new hust.soict.globalict.aims.exception.LimitExceededException("ERROR: The number of media has reached its limit (" + MAX_NUMBERS_ORDERED + ")");
         }
     }
 

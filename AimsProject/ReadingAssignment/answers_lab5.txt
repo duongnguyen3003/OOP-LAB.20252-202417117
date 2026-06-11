@@ -1,0 +1,10 @@
+Question: What happens when you don’t update for them to catch?
+Answer: Since PlayerException is a checked exception (it extends java.lang.Exception), if the code that calls a method throwing this exception does not catch it or declare it in its own throws clause, the code will not compile. If the exception is declared to be thrown all the way up to the main method and still not caught, the Java Virtual Machine will terminate the thread, print a stack trace to the standard error stream, and the program will exit abnormally. Handling the exception with a try-catch block allows the program to recover gracefully, for example by showing an error message to the user via a dialog box, as implemented in this lab.
+
+Question: Explain the code for setData() in ItemController
+Answer: 
+These lines retrieve the title and cost from the Media object and set them as the text for the lblTitle and lblCost labels in the UI.
+This block checks if the Media object implements the Playable interface. If it does, the "Play" button is made visible. If it doesn't (e.g., it's a Book), the "Play" button is hidden, and the "Add to Cart" button's margin is adjusted to maintain a centered appearance.
+
+Question: Explain the initialize() method in FXML controllers
+Answer: The initialize() method is automatically called by the FXMLLoader after the FXML file has been loaded and all @FXML-annotated fields have been injected with their corresponding UI components. This is the correct place to perform runtime setup, such as populating a GridPane with data, setting up TableView columns, or adding event listeners to UI properties.

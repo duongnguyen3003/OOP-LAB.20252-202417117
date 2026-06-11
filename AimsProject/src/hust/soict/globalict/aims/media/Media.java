@@ -2,7 +2,7 @@ package hust.soict.globalict.aims.media;
 
 import java.util.Comparator;
 
-public abstract class Media {
+public abstract class Media implements Comparable<Media> {
     
     private int id;
     private String title;
@@ -52,13 +52,25 @@ public abstract class Media {
     // Override equals method
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+        if (obj == null) {
+            throw new NullPointerException("Object to compare is null");
         }
         if (!(obj instanceof Media)) {
-            return false;
+            throw new ClassCastException("Object to compare is not a Media");
         }
         Media other = (Media) obj;
-        return this.title != null && this.title.equals(other.getTitle());
+        return this.title != null && this.title.equals(other.getTitle()) && this.cost == other.getCost();
     }
-}
+
+    @Override
+    public int compareTo(Media other) {
+        if (other == null) {
+            throw new NullPointerException("Media to compare is null");
+        }
+        int titleCompare = this.title.compareTo(other.getTitle());
+        if (titleCompare != 0) {
+            return titleCompare;
+        }
+        return Float.compare(this.cost, other.getCost());
+    }
+    }

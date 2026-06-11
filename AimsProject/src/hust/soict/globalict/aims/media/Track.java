@@ -18,12 +18,12 @@ public class Track implements Playable {
     }
 
     @Override
-    public void play() {
+    public void play() throws hust.soict.globalict.aims.exception.PlayerException {
         if (this.getLength() > 0) {
             System.out.println("Playing track: " + this.getTitle());
             System.out.println("Track length: " + this.getLength());
         } else {
-            System.out.println("Track '" + this.getTitle() + "' cannot be played because its length is invalid (0 or less).");
+            throw new hust.soict.globalict.aims.exception.PlayerException("ERROR: Track length is non-positive!");
         }
     }
 
