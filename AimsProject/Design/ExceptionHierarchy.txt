@@ -1,0 +1,7 @@
+Exception Hierarchy for AIMS Project:
+
+java.lang.Object
+  └── java.lang.Throwable
+        └── java.lang.Exception
+              ├── hust.soict.globalict.aims.exception.PlayerException (Custom)
+              └── hust.soict.globalict.aims.exception.LimitExceededException (Custom)

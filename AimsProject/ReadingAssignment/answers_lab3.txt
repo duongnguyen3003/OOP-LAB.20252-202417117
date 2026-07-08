@@ -1,0 +1,29 @@
+14. Question: Which classes are aggregates of other classes? Checking all constructors of whole classes if they initialize for their parts?
+- The Cart and Store classes are aggregates of Media objects, and the CompactDisc class is an aggregate of Track objects. All constructors for these classes should initialize their respective ArrayLists to prevent null pointer errors.
+
+15. Question: If the passing object is not an instance of Media, what happens?
+- If the object is not an instance of Media, a ClassCastException will occur during the casting process. To avoid this, you must use the instanceof operator to verify the object type before casting.
+
+16. Question: Iterate through the list and print out the information of the media by using toString() method. Observe what happens and explain in detail.
+- When iterating through a List of Media, calling toString() invokes the specific implementation belonging to the actual object type (Book, CD, or DVD) stored in the list. This demonstrates runtime polymorphism where the JVM determines the correct method to execute based on the actual object.
+
+16. Question: What are the advantages of Polymorphism?
+- Polymorphism allows for cleaner, more extensible code by letting you write methods that operate on a general superclass while automatically using the specific behaviors of subclasses.
+
+16. Question: How is Inheritance useful to achieve Polymorphism in Java?
+- Inheritance provides the hierarchical structure that allows a superclass reference variable to hold any subclass object, which is required for dynamic method dispatch.
+
+16. Question: What are the differences between Polymorphism and Inheritance in Java?
+- Inheritance is a structural mechanism for code sharing and hierarchy, while Polymorphism is a behavioral mechanism that allows the same method call to act differently based on the underlying object implementation.
+
+17. Question: Suppose we are taking this Comparable interface approach. What class should implement the Comparable interface?
+- The Media class should implement the Comparable interface so that all subclasses share a consistent natural ordering logic.
+
+17. Question: In those classes, how should you implement the compareTo() method to reflect the ordering that we want?
+- The compareTo() method should be implemented to first compare titles alphabetically and then compare costs if the titles are identical.
+
+17. Question: Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+- No, the Comparable interface only allows for one natural ordering rule; to support multiple sorting options like title-then-cost and cost-then-title, the Comparator interface must be used.
+
+17. Question: Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+- I would create a custom Comparator that uses the instanceof operator to check if the objects are DigitalVideoDiscs, then apply the specific comparison for length after titles but before costs.
